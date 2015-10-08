@@ -1,5 +1,3 @@
-public class Operateur {
-
-	private string reseau;
-
+public enum Operateur {
+	SFR, Orange, Free, Sosh, Bouygues 
 }

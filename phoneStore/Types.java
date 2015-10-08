@@ -1,3 +1,3 @@
 public enum Types {
-	secteur, usb, allume-cigare
+	secteur, usb, allume_cigare
 }

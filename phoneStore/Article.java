@@ -1,7 +1,7 @@
 public class Article {
 
-	private string reference;
-	private string intitule;
+	private String reference;
+	private String intitule;
 	private float prix;
 
 	/**
@@ -10,12 +10,12 @@ public class Article {
 	 * @param intitule
 	 * @param prix
 	 */
-	public Article(string reference, string intitule, float prix) {
+	public Article(String reference, String intitule, float prix) {
 		// TODO - implement Article.Article
 		throw new UnsupportedOperationException();
 	}
 
-	public string getIntitule() {
+	public String getIntitule() {
 		return this.intitule;
 	}
 
@@ -23,11 +23,11 @@ public class Article {
 	 * 
 	 * @param intitule
 	 */
-	public void setIntitule(string intitule) {
+	public void setIntitule(String intitule) {
 		this.intitule = intitule;
 	}
 
-	public string getReference() {
+	public String getReference() {
 		return this.reference;
 	}
 
@@ -35,7 +35,7 @@ public class Article {
 	 * 
 	 * @param reference
 	 */
-	public void setReference(string reference) {
+	public void setReference(String reference) {
 		this.reference = reference;
 	}
 
@@ -51,7 +51,7 @@ public class Article {
 		this.prix = prix;
 	}
 
-	public void toString() {
+	public String toString() {
 		// TODO - implement Article.toString
 		throw new UnsupportedOperationException();
 	}
