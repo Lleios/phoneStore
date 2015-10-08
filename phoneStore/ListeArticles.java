@@ -1,40 +1,51 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class ListeArticles {
 
-	private ArrayList<Article> listeArticles;
+	private List<Article> listeArticles;
 
+	/** Constructeur initialise la liste d'articles
+	 * 
+	 */
 	public ListeArticles() {
-		// TODO - implement ListeArticles.ListeArticles
-		throw new UnsupportedOperationException();
+		this.listeArticles = new ArrayList<Article>();
 	}
 
-	/**
+	/** Ajouter des articles dans la liste d'articles
 	 * 
-	 * @param article
+	 * @param article à ajouter dans la liste
 	 */
 	public void add(Article article) {
-		// TODO - implement ListeArticles.add
-		throw new UnsupportedOperationException();
+		this.listeArticles.add(article);
 	}
 
-	/**
+	/** Supprimer un article de la liste des articles
 	 * 
-	 * @param article
+	 * @param article à supprimmer de la liste
 	 */
 	public void delete(Article article) {
-		// TODO - implement ListeArticles.delete
-		throw new UnsupportedOperationException();
+		this.listeArticles.remove(article);
 	}
 
+	/** Affichage des articles par tri selon la reference de l'article
+	 * 
+	 */
 	public void tousLesArticles_ParRef() {
-		// TODO - implement ListeArticles.tousLesArticles_ParRef
-		throw new UnsupportedOperationException();
+		
 	}
 
+	/** Affichage des articles par tri selon l'intitule de l'article
+	 * 
+	 */
 	public void tousLesArticles_ParIntitule() {
 		// TODO - implement ListeArticles.tousLesArticles_ParIntitule
 		throw new UnsupportedOperationException();
 	}
 
+	/** Affichage des articles par tri selon le prix de l'article
+	 * 
+	 */
 	public void tousLesArticles_ParPrix() {
 		// TODO - implement ListeArticles.tousLesArticles_ParPrix
 		throw new UnsupportedOperationException();
