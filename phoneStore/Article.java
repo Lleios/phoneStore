@@ -64,6 +64,10 @@ public class Article {
 		this.prix = prix;
 	}
 
+	/** Retourne l'article sous la forme d'une chaîne de caractères
+	 * 
+	 * @return la chaïne représentant un article
+	 */
 	public String toString() {
 		return "Reference de l'article: " + this.reference + ". IntitulÃ© de l'article: " + this.intitule + 
 				". Prix de l'article: " + this.prix + "â‚¬.";

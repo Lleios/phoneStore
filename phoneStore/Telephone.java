@@ -1,6 +1,6 @@
 public class Telephone extends Article {
 
-	private string opérateur;
+	private String operateur;
 
 	/**
 	 * 
@@ -9,13 +9,12 @@ public class Telephone extends Article {
 	 * @param prix
 	 * @param operateur
 	 */
-	public Telephone(string reference, string intitule, float prix, Operateur operateur) {
-		// TODO - implement Telephone.Telephone
+	public Telephone(int reference, String intitule, float prix, Operateur operateur) {
+		super(reference, intitule, prix);
 		throw new UnsupportedOperationException();
 	}
 
-	public void toString() {
-		// TODO - implement Telephone.toString
+	public String toString() {
 		throw new UnsupportedOperationException();
 	}
 
