@@ -1,7 +1,9 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
-public class ListeArticles {
+public class ListeArticles{
 
 	private List<Article> listeArticles;
 
@@ -32,23 +34,38 @@ public class ListeArticles {
 	 * 
 	 */
 	public void tousLesArticles_ParRef() {
-		
+		Comparator<Article> c = new CompareReference();
+		Collections.sort(this.listeArticles);
+		this.afficher();
 	}
 
 	/** Affichage des articles par tri selon l'intitule de l'article
 	 * 
 	 */
 	public void tousLesArticles_ParIntitule() {
-		// TODO - implement ListeArticles.tousLesArticles_ParIntitule
-		throw new UnsupportedOperationException();
+		Comparator<Article> c = new CompareIntitule();
+		Collections.sort(this.listeArticles);
+		this.afficher();
 	}
 
 	/** Affichage des articles par tri selon le prix de l'article
 	 * 
 	 */
 	public void tousLesArticles_ParPrix() {
-		// TODO - implement ListeArticles.tousLesArticles_ParPrix
-		throw new UnsupportedOperationException();
+		Comparator c = new ComparePrix();
+		Collections.sort(this.listeArticles);
+		this.afficher();
+	}
+	
+	/** Afficher les articles de la liste d'articles
+	 * 
+	 */
+	public void afficher(){
+		//On parcours la liste d'articles
+		for(Article a : listeArticles){
+			//On affiche l'article qui utilisera la fonction toString pour l'afficher
+			System.out.println(a);
+		}
 	}
 
 }

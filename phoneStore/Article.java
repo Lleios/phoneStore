@@ -1,4 +1,4 @@
-public class Article {
+public class Article implements Comparable<Article>{
 
 	private int reference;
 	private String intitule;
@@ -67,6 +67,10 @@ public class Article {
 	public String toString() {
 		return "Reference de l'article: " + this.reference + ". Intitulé de l'article: " + this.intitule + 
 				". Prix de l'article: " + this.prix + "€.";
+	}
+	
+	public int compareTo(Article a){
+		return this.reference < a.reference ? -1 : this.reference == a.reference ? 0 : 1;
 	}
 
 }
