@@ -1,3 +1,9 @@
+/**
+* Classe Magasin
+*
+* @author  Gonnord Kevin
+*/
+
 public class Magasins {
 
 	/**

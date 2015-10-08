@@ -1,3 +1,8 @@
+/**
+* Classe Article
+*
+* @author  Gonnord Kevin, Chcouropat Youri
+*/
 public class Article implements Comparable<Article>{
 
 	private int reference;
@@ -72,5 +77,4 @@ public class Article implements Comparable<Article>{
 	public int compareTo(Article a){
 		return this.reference < a.reference ? -1 : this.reference == a.reference ? 0 : 1;
 	}
-
 }

@@ -1,3 +1,11 @@
+/**
+* Classe Coque, sous-classe d
+*
+* @author  Gonnord Kevin
+*/
+
+import java.util.Set;
+
 public class Coque extends Accessoire {
 
 	private Couleur couleur;
@@ -10,13 +18,13 @@ public class Coque extends Accessoire {
 	 * @param marques
 	 * @param couleur
 	 */
-	public Coque(string reference, string intitule, float prix, Set<String> marques, Couleur couleur) {
-		// TODO - implement Coque.Coque
+	public Coque(int reference, String intitule, float prix, Set<String> marques, Couleur couleur) {
+		super(reference, intitule, prix, marques);
+		this.couleur = couleur;
 		throw new UnsupportedOperationException();
 	}
 
-	public void toString() {
-		// TODO - implement Coque.toString
+	public String toString() {
 		throw new UnsupportedOperationException();
 	}
 

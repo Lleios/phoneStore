@@ -1,3 +1,8 @@
+/**
+* Classe ListeArticles
+*
+* @author  Gonnord Kevin, Chcouropat Youri
+*/
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -67,5 +72,4 @@ public class ListeArticles{
 			System.out.println(a);
 		}
 	}
-
 }

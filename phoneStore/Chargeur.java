@@ -1,3 +1,11 @@
+/**
+* Classe Chargeur, sous-classe d'Accessoire
+*
+* @author  Gonnord Kevin
+*/
+
+import java.util.Set;
+
 public class Chargeur extends Accessoire {
 
 	/**
@@ -8,13 +16,12 @@ public class Chargeur extends Accessoire {
 	 * @param marques
 	 * @param types
 	 */
-	public Chargeur(string reference, string intitule, float prix, Set<String> marques, Types types) {
-		// TODO - implement Chargeur.Chargeur
+	public Chargeur(int reference, String intitule, float prix, Set<String> marques, Types types) {
+		super(reference, intitule, prix, marques);
 		throw new UnsupportedOperationException();
 	}
 
-	public void toString() {
-		// TODO - implement Chargeur.toString
+	public String toString() {
 		throw new UnsupportedOperationException();
 	}
 
