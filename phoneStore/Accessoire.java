@@ -1,6 +1,10 @@
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
 public class Accessoire extends Article {
 
-	private Set<string> marques;
+	private Set<String> marques;
 
 	/**
 	 * 
@@ -9,26 +13,37 @@ public class Accessoire extends Article {
 	 * @param prix
 	 * @param marques
 	 */
-	public Accessoire(string reference, string intitule, float prix, Set<String> marques) {
-		// TODO - implement Accessoire.Accessoire
-		throw new UnsupportedOperationException();
+	public Accessoire(int reference, String intitule, float prix, Set<String> marques) {
+		super(reference, intitule, prix);
+		this.marques = marques;
+		marques = new HashSet<String>();
 	}
 
-	public Set<string> getMarques() {
+	/** Obtenir l'ensemble des marques compatible avec l'accessoire
+	 * 
+	 * @return ensemble de marques
+	 */
+	public Set<String> getMarques() {
 		return this.marques;
 	}
 
-	/**
+	/** Changer l'ensemble des marques compatible avec l'accessoire
 	 * 
-	 * @param marques
+	 * @param ensemble de marques
 	 */
-	public void setMarques(Set<string> marques) {
+	public void setMarques(Set<String> marques) {
 		this.marques = marques;
 	}
 
-	public void toString() {
-		// TODO - implement Accessoire.toString
-		throw new UnsupportedOperationException();
+	public String toString() {
+		return super.toString() + " Telephone compatibles avec : " + this.marques;
+	}
+	
+	public void afficherMarques(){
+		Iterator<String> it = this.marques.iterator();
+		while( it.hasNext() ){
+			System.out.println(it.next());
+		}
 	}
 
 }
