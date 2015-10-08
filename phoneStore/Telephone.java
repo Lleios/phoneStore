@@ -1,3 +1,9 @@
+/**
+* Classe Telephone, sous-classe d'Article
+*
+* @author  Gonnord Kevin
+*/
+
 public class Telephone extends Article {
 
 	private String operateur;

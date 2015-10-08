@@ -1,3 +1,9 @@
+/**
+* Classe ListeArticles
+*
+* @author  Gonnord Kevin
+*/
+
 import java.util.ArrayList;
 import java.util.List;
 

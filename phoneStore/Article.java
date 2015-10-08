@@ -1,3 +1,10 @@
+/**
+* Classe Article
+*
+* @author  Gonnord Kevin
+*/
+
+
 public class Article {
 
 	private int reference;
