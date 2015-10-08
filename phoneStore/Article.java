@@ -1,59 +1,72 @@
 public class Article {
 
-	private String reference;
+	private int reference;
 	private String intitule;
 	private float prix;
 
-	/**
+	/** Constructeur de l'Article initialise les attributs
 	 * 
-	 * @param reference
-	 * @param intitule
-	 * @param prix
+	 * @param reference reference de l'article
+	 * @param intitule intitule nom de l'article
+	 * @param prix prix de l'article en euros
 	 */
-	public Article(String reference, String intitule, float prix) {
-		// TODO - implement Article.Article
-		throw new UnsupportedOperationException();
+	public Article(int reference, String intitule, float prix) {
+		this.reference = reference;
+		this.intitule = intitule;
+		this.prix = prix;
 	}
 
+	/**Obtenir l'intitule de l'article
+	 * 
+	 * @return l'intitule de l'article
+	 */
 	public String getIntitule() {
 		return this.intitule;
 	}
 
-	/**
+	/**Changer l'intitule de l'article
 	 * 
-	 * @param intitule
+	 * @param intitule nouveau intitule de l'article
 	 */
 	public void setIntitule(String intitule) {
 		this.intitule = intitule;
 	}
 
-	public String getReference() {
+	/** Obtenir la reference de l'article
+	 * 
+	 * @return la reference de l'article
+	 */
+	public int getReference() {
 		return this.reference;
 	}
 
-	/**
+	/** Changer la reference de l'article
 	 * 
-	 * @param reference
+	 * @param reference nouvelle reference de l'article
 	 */
-	public void setReference(String reference) {
+	public void setReference(int reference) {
 		this.reference = reference;
 	}
 
+	/** Obtenir le prix de l'article
+	 * 
+	 * @return le prix de l'article
+	 */
 	public float getPrix() {
 		return this.prix;
 	}
 
-	/**
+	/** Changer le prix de l'article
 	 * 
-	 * @param prix
+	 * @param prix nouveau prix de l'article
 	 */
 	public void setPrix(float prix) {
 		this.prix = prix;
 	}
 
 	public String toString() {
-		// TODO - implement Article.toString
-		throw new UnsupportedOperationException();
+		return "Reference de l'article: " + this.reference + ". Intitulé de l'article: " + this.intitule + 
+				". Prix de l'article: " + this.prix + "€.";
 	}
 
 }
