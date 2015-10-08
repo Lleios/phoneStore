@@ -10,7 +10,7 @@ public class Cordon extends Accessoire {
 
 	private int longueur;
 
-	/**
+	/** Constructeur
 	 * 
 	 * @param reference
 	 * @param intitule
@@ -21,14 +21,13 @@ public class Cordon extends Accessoire {
 	public Cordon(int reference, String intitule, float prix, Set<String> marques, int longueur) {
 		super(reference, intitule, prix, marques);
 		this.longueur = longueur;
-		throw new UnsupportedOperationException();
 	}
 
 	public String toString() {
-		throw new UnsupportedOperationException();
+		return super.toString() + " Longueur: " + this.longueur;
 	}
 
-	/**
+	/** Obtenir la longueur du cordon
 	 * 
 	 * @return longueur
 	 */
@@ -36,7 +35,7 @@ public class Cordon extends Accessoire {
 		return this.longueur;
 	}
 
-	/**
+	/** Changer la logueur du cordon
 	 * 
 	 * @param longueur
 	 * 

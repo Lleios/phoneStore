@@ -10,7 +10,7 @@ public class Coque extends Accessoire {
 
 	private Couleur couleur;
 
-	/**
+	/** Constructeur
 	 * 
 	 * @param reference
 	 * @param intitule
@@ -21,11 +21,10 @@ public class Coque extends Accessoire {
 	public Coque(int reference, String intitule, float prix, Set<String> marques, Couleur couleur) {
 		super(reference, intitule, prix, marques);
 		this.couleur = couleur;
-		throw new UnsupportedOperationException();
 	}
 
 	public String toString() {
-		throw new UnsupportedOperationException();
+		return super.toString() + " Couleur: " + this.couleur;
 	}
 
 }
