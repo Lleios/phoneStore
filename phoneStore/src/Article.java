@@ -3,7 +3,7 @@
 *
 * @author  Gonnord Kevin, Chcouropat Youri
 */
-public class Article implements Comparable<Article>{
+public class Article {
 
 	private int reference;
 	private String intitule;
@@ -74,7 +74,13 @@ public class Article implements Comparable<Article>{
 				". Prix de l'article: " + this.prix + "€.";
 	}
 	
-	public int compareTo(Article a){
-		return this.reference < a.reference ? -1 : this.reference == a.reference ? 0 : 1;
+	public boolean equals(Object o){
+		if ( o instanceof Article){
+			Article a = (Article)o;
+			return this.reference == a.reference && this.intitule.equals(a.intitule) && this.prix == a.prix;
+		}
+		else {
+			return false;
+		}
 	}
 }

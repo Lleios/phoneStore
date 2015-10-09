@@ -1,5 +1,7 @@
 /**
 * Classe ListeArticles
+* 
+* La classe ListeArticles, représente les articles présent dans le magasin
 *
 * @author  Gonnord Kevin, Chcouropat Youri
 */
@@ -39,8 +41,7 @@ public class ListeArticles{
 	 * 
 	 */
 	public void tousLesArticles_ParRef() {
-		Comparator<Article> c = new CompareReference();
-		Collections.sort(this.listeArticles);
+		Collections.sort(this.listeArticles, new ParRef());
 		this.afficher();
 	}
 
@@ -48,8 +49,7 @@ public class ListeArticles{
 	 * 
 	 */
 	public void tousLesArticles_ParIntitule() {
-		Comparator<Article> c = new CompareIntitule();
-		Collections.sort(this.listeArticles);
+		Collections.sort(this.listeArticles, new ParIntitule());
 		this.afficher();
 	}
 
@@ -57,8 +57,7 @@ public class ListeArticles{
 	 * 
 	 */
 	public void tousLesArticles_ParPrix() {
-		Comparator c = new ComparePrix();
-		Collections.sort(this.listeArticles);
+		Collections.sort(this.listeArticles, new ParPrix());
 		this.afficher();
 	}
 	
