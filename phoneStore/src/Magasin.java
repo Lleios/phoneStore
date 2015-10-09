@@ -63,6 +63,7 @@ public class Magasin {
 		System.out.println("5 - Afficher la liste d'artcle trier par intitulé");
 		System.out.println("6 - Afficher la liste d'article trier par prix");
 		System.out.println("7 - Quitter l'application");
+		System.out.println("8 - Sauvegarder les articles dans un fichiers");
 		System.out.println("(appuyer sur le numero correspondant)");
 	}
 	
@@ -164,8 +165,7 @@ public class Magasin {
 				type.valueOf(sc.next());
 				Chargeur chargeur = new Chargeur(reference, intitule ,prix, marques, type);
 				return chargeur;
-			case 5: System.exit(0);
-			break;
+			case 5: return null;
 			default: System.out.println("Je n'ai pas compris, veuillez choisir un entier"
 					+ " pour faire votre choix.");
 				defaut = true;

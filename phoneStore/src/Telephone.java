@@ -6,7 +6,7 @@
 
 public class Telephone extends Article {
 
-	private String operateur;
+	private Operateur operateur;
 
 	/**
 	 * 
@@ -21,7 +21,7 @@ public class Telephone extends Article {
 	}
 
 	public String toString() {
-		return super().toString();
+		return super.toString();
 	}
 
 }
