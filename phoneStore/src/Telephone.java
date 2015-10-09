@@ -17,11 +17,11 @@ public class Telephone extends Article {
 	 */
 	public Telephone(int reference, String intitule, float prix, Operateur operateur) {
 		super(reference, intitule, prix);
-		throw new UnsupportedOperationException();
+		this.operateur = operateur;
 	}
 
 	public String toString() {
-		throw new UnsupportedOperationException();
+		return super().toString();
 	}
 
 }
