@@ -15,7 +15,6 @@ public class ParPrix implements Comparator<Article> {
 	 * 
 	 * Le constructeur n'a pas de paramètre
 	 */
-
 	public ParPrix(){
 		super();
 	}
@@ -27,7 +26,6 @@ public class ParPrix implements Comparator<Article> {
 	 * @param a2
 	 * @return un entier positif, negatif ou nul selon l'ordre entre les deux articles
 	 */
-
 	public int compare(Article a1, Article a2){
 		if ( a1.getPrix() == a2.getPrix()){
 			return 0;

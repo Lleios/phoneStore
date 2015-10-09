@@ -1,5 +1,5 @@
 /**
-* Enumeration des opérateurs
+* Enumeration des opÃ©rateurs
 *
 * @author  Gonnord Kevin
 */

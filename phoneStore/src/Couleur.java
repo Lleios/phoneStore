@@ -1,7 +1,7 @@
 /**
-* Enumération des couleurs
+* EnumÃ©ration des couleurs
 *
-* @author  Gonnord Kevin
+* @author  Gonnord Kevin, Chcouropat Youri
 */
 
 public enum Couleur {

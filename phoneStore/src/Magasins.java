@@ -1,11 +1,13 @@
-import java.util.Arrays;
-import java.util.HashSet;
-
 /**
 * Classe Magasin
 *
-* @author  Gonnord Kevin
+* Classe de test pour la classe ListeArticles
+*
+* @author  Gonnord Kevin, Chcouropat Youri
 */
+
+import java.util.Arrays;
+import java.util.HashSet;
 
 public class Magasins {
 

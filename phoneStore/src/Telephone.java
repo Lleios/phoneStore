@@ -1,7 +1,7 @@
 /**
 * Classe Telephone, sous-classe d'Article
 *
-* @author  Gonnord Kevin
+* @author  Gonnord Kevin, Chcouropat Youri
 */
 
 public class Telephone extends Article {

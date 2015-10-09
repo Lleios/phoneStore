@@ -23,10 +23,6 @@ public class Cordon extends Accessoire {
 		this.longueur = longueur;
 	}
 
-	public String toString() {
-		return super.toString() + " Longueur: " + this.longueur;
-	}
-
 	/** Obtenir la longueur du cordon
 	 * 
 	 * @return longueur
@@ -44,4 +40,7 @@ public class Cordon extends Accessoire {
 		this.longueur = longueur;
 	}
 
+	public String toString() {
+		return super.toString() + " Longueur: " + this.longueur +".";
+	}
 }

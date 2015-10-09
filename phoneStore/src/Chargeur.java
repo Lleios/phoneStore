@@ -1,14 +1,19 @@
 /**
 * Classe Chargeur, sous-classe d'Accessoire
+* 
+* la classe Chargeur représente les chargeurs en vente
 *
-* @author  Gonnord Kevin
+* @author  Gonnord Kevin, Chcouropat Youri
 */
 
 import java.util.Set;
 
 public class Chargeur extends Accessoire {
+	
+	private Types types;
 
 	/**
+	 * Constructeur de la classe Chargeur
 	 * 
 	 * @param reference
 	 * @param intitule
@@ -20,8 +25,11 @@ public class Chargeur extends Accessoire {
 		super(reference, intitule, prix, marques);
 	}
 
+	/**
+	 * Retourne l'object Chargeur sous la forme d'une chaïne de caractères
+	 */
 	public String toString() {
-		return super.toString();
+		return super.toString() +"type : " + this.types + ".";
 	}
 
 }

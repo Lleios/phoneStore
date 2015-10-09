@@ -9,12 +9,12 @@
 import java.util.Comparator;
 
 public class ParIntitule implements Comparator<Article> {
+	
 	/**
 	 * Constructeur de la classe ParIntitule
 	 * 
 	 * Le constructeur n'a pas de paramètre
 	 */
-
 	public ParIntitule(){
 		super();
 	}
@@ -26,7 +26,6 @@ public class ParIntitule implements Comparator<Article> {
 	 * @param a2
 	 * @return un entier positif, negatif ou nul selon l'ordre entre les deux articles
 	 */
-
 	public int compare(Article a1, Article a2){
 		return a1.getIntitule().compareTo(a2.getIntitule());
 	}

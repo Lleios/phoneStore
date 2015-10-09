@@ -1,5 +1,7 @@
 /**
 * Classe Accessoire, sous-classe d'Article
+* 
+* La classe Accessoire représente les différents accésssoire en vente
 *
 * @author  Gonnord Kevin, Chcouropat Youri
 */
@@ -13,6 +15,7 @@ public class Accessoire extends Article {
 	private Set<String> marques;
 
 	/**
+	 * Constructeur de la classe Accessoire
 	 * 
 	 * @param reference
 	 * @param intitule
@@ -25,7 +28,8 @@ public class Accessoire extends Article {
 		marques = new HashSet<String>();
 	}
 
-	/** Obtenir l'ensemble des marques compatible avec l'accessoire
+	/** 
+	 * Obtenir l'ensemble des marques compatibles avec l'accessoire
 	 * 
 	 * @return ensemble de marques
 	 */
@@ -33,7 +37,8 @@ public class Accessoire extends Article {
 		return this.marques;
 	}
 
-	/** Changer l'ensemble des marques compatible avec l'accessoire
+	/** 
+	 * Change l'ensemble des marques compatibles avec l'accessoire
 	 * 
 	 * @param ensemble de marques
 	 */
@@ -41,10 +46,16 @@ public class Accessoire extends Article {
 		this.marques = marques;
 	}
 
+	/**
+	 * retourne l'objet Accessoire sous la forme d'une chaïne de caractères
+	 */
 	public String toString() {
 		return super.toString() + " Telephone compatibles avec : " + this.marques;
 	}
 	
+	/**
+	 * Affiche la liste des marques compatibles avec l'accessoire
+	 */
 	public void afficherMarques(){
 		Iterator<String> it = this.marques.iterator();
 		while( it.hasNext() ){
