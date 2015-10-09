@@ -72,4 +72,13 @@ public class ListeArticles{
 			System.out.println(a);
 		}
 	}
+	
+	public Article trouverArticle(int reference){
+		for(Article a: listeArticles){
+			if(a.getReference() == reference){
+				return a;
+			}
+		}
+		return null;
+	}
 }
