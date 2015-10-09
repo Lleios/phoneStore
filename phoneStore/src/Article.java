@@ -1,15 +1,18 @@
 /**
 * Classe Article
+* 
+* La classe Article représente un article à la vente
 *
 * @author  Gonnord Kevin, Chcouropat Youri
 */
-public class Article implements Comparable<Article>{
+public class Article {
 
 	private int reference;
 	private String intitule;
 	private float prix;
 
-	/** Constructeur de l'Article initialise les attributs
+	/** 
+	 * Constructeur de l'Article initialise les attributs
 	 * 
 	 * @param reference reference de l'article
 	 * @param intitule intitule nom de l'article
@@ -21,7 +24,8 @@ public class Article implements Comparable<Article>{
 		this.prix = prix;
 	}
 
-	/**Obtenir l'intitule de l'article
+	/**
+	 * Obtenir l'intitule de l'article
 	 * 
 	 * @return l'intitule de l'article
 	 */
@@ -29,7 +33,8 @@ public class Article implements Comparable<Article>{
 		return this.intitule;
 	}
 
-	/**Changer l'intitule de l'article
+	/**
+	 * Changer l'intitule de l'article
 	 * 
 	 * @param intitule nouveau intitule de l'article
 	 */
@@ -45,7 +50,8 @@ public class Article implements Comparable<Article>{
 		return this.reference;
 	}
 
-	/** Changer la reference de l'article
+	/** 
+	 * Changer la reference de l'article
 	 * 
 	 * @param reference nouvelle reference de l'article
 	 */
@@ -53,7 +59,8 @@ public class Article implements Comparable<Article>{
 		this.reference = reference;
 	}
 
-	/** Obtenir le prix de l'article
+	/** 
+	 * Obtenir le prix de l'article
 	 * 
 	 * @return le prix de l'article
 	 */
@@ -61,7 +68,8 @@ public class Article implements Comparable<Article>{
 		return this.prix;
 	}
 
-	/** Changer le prix de l'article
+	/** 
+	 * Changer le prix de l'article
 	 * 
 	 * @param prix nouveau prix de l'article
 	 */
@@ -69,12 +77,12 @@ public class Article implements Comparable<Article>{
 		this.prix = prix;
 	}
 
+	/**
+	 * Retourne l'objet Article sous la forme d'une chaîne de caractères
+	 */
 	public String toString() {
 		return "Reference de l'article: " + this.reference + ". Intitulé de l'article: " + this.intitule + 
-				". Prix de l'article: " + this.prix + "€.";
+				". Prix de l'article: " + this.prix + "€";
 	}
 	
-	public int compareTo(Article a){
-		return this.reference < a.reference ? -1 : this.reference == a.reference ? 0 : 1;
-	}
 }

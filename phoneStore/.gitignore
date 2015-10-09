@@ -9,8 +9,14 @@
 /Operateur.class
 /Telephone.class
 /Types.class
+<<<<<<< HEAD
 /CompareArticles.class
 /CompareReference.class
 /CompareIntitule.class
 /ComparePrix.class
 /bin
+=======
+/CompareIntitule.class
+/ComparePrix.class
+/CompareReference.class
+>>>>>>> 6ab0d51e8e2d88088ad967466b1636f27b4cdb21

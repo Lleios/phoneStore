@@ -1,7 +1,9 @@
 /**
-* Classe Coque, sous-classe d
+* Classe Coque, sous-classe d'Accessoire
 *
-* @author  Gonnord Kevin
+*la classe Coque représente les coques en vente
+*
+* @author  Gonnord Kevin, Chcouropat Youri
 */
 
 import java.util.Set;
@@ -10,7 +12,8 @@ public class Coque extends Accessoire {
 
 	private Couleur couleur;
 
-	/** Constructeur
+	/** 
+	 * Constructeur de la classe Accessoire
 	 * 
 	 * @param reference
 	 * @param intitule
@@ -23,8 +26,11 @@ public class Coque extends Accessoire {
 		this.couleur = couleur;
 	}
 
+	/**
+	 * Retourne l'objet Coque sous la forme d'une chaïne de caractères
+	 */
 	public String toString() {
-		return super.toString() + " Couleur: " + this.couleur;
+		return super.toString() + " Couleur: " + this.couleur +".";
 	}
 
 }

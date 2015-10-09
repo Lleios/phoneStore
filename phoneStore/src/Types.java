@@ -1,7 +1,7 @@
 /**
 * Enumeration des types
 *
-* @author  Gonnord Kevin
+* @author  Gonnord Kevin, Chcouropat Youri
 */
 
 public enum Types {
