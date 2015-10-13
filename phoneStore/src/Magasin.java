@@ -27,16 +27,20 @@ public class Magasin {
 			case 1: article = creeArticle();
 				listeArticles.add(article);
 			break;
-			case 2: article = supprimerArticle();
+			case 2: if(listeArticles.getListeArticles().isEmpty()){
+				System.out.println("La liste est vide pas d'article à supprimer !");
+			}else{
+				article = supprimerArticle();
 				listeArticles.delete(article);
+			}
 			break;
 			case 3: listeArticles.afficher();
 			break;
-			case 4:;
+			case 4:listeArticles.tousLesArticles_ParRef();
 			break;
-			case 5:;
+			case 5:listeArticles.tousLesArticles_ParIntitule();
 			break;
-			case 6:;
+			case 6:listeArticles.tousLesArticles_ParPrix();;
 			break;
 			case 7: System.exit(0);
 			break;
@@ -62,8 +66,8 @@ public class Magasin {
 		System.out.println("4 - Affihcher la liste d'article trier par référence");
 		System.out.println("5 - Afficher la liste d'artcle trier par intitulé");
 		System.out.println("6 - Afficher la liste d'article trier par prix");
-		System.out.println("7 - Quitter l'application");
 		System.out.println("8 - Sauvegarder les articles dans un fichiers");
+		System.out.println("7 - Quitter l'application");
 		System.out.println("(appuyer sur le numero correspondant)");
 	}
 	

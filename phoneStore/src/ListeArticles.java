@@ -104,4 +104,14 @@ public class ListeArticles{
 		}
 		return null;
 	}
+
+	public List<Article> getListeArticles() {
+		return listeArticles;
+	}
+
+	public void setListeArticles(List<Article> listeArticles) {
+		this.listeArticles = listeArticles;
+	}
+	
+	
 }
