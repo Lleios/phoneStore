@@ -84,10 +84,15 @@ public class ListeArticles{
 	 * Afficher les articles de la liste d'articles
 	 */
 	public void afficher(){
-		//On parcours la liste d'articles
-		for(Article a : listeArticles){
-			//On affiche l'article qui utilisera la fonction toString pour l'afficher
-			System.out.println(a);
+		//On vérifie si la liste d'article est vide
+		if(listeArticles.isEmpty()){
+			System.out.println("La liste est vide !");
+		}else{
+			//On parcours la liste d'articles
+			for(Article a : listeArticles){
+				//On affiche l'article qui utilisera la fonction toString pour l'afficher
+				System.out.println(a);
+			}
 		}
 	}
 	

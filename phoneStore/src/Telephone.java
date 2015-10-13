@@ -21,7 +21,7 @@ public class Telephone extends Article {
 	}
 
 	public String toString() {
-		return super.toString();
+		return super.toString()+ " Operateur associé: "+this.operateur;
 	}
 
 }
