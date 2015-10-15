@@ -7,13 +7,18 @@
 public enum Operateur {
 	SFR, Orange, Free, Sosh, Bouygues;
 	
-//	public String getOperateur(Operateur){
-//		switch(Operateur){
-//		case Operateur.Free: return "Free";
-//		case Operateur.Orange: return "Orange";
-//		case Operateur.Sosh: return "Sosh";
-//		case Operateur.Bouygues: return "Bouygues";
-//		case Operateur.SFR: return "SFR";
-//		}
-//	}
+	public String toString()
+	{
+		return super.toString();
+	}
+	
+	public static Operateur get(String operateur)
+	{
+		for (Operateur m : values()){
+			if (operateur.equals(m.toString())){
+				return m;
+			}
+		}
+		return null;
+	}
 }

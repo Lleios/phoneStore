@@ -107,7 +107,8 @@ public class Magasin {
 				System.out.println("Quel est le prix du téléphone:");
 				prix = sc.nextFloat();
 				System.out.println("Quel est l'opérateur associer:");
-				operateur.valueOf(sc.next());
+//				operateur.valueOf(sc.next());
+				operateur = Operateur.get(sc.next());
 				Telephone tel = new Telephone(reference, intitule, prix, operateur);
 				System.out.println("Téléphone ajouté au magasin !");
 				return tel;
@@ -118,7 +119,7 @@ public class Magasin {
 				System.out.println("Quel est le prix de la coque:");
 				prix = sc.nextFloat();
 				System.out.println("Quel est la couleur de la coque:");
-				couleur.valueOf(sc.next());
+				couleur = Couleur.get(sc.next());
 				System.out.println("Quel sont les marques associées:");
 				System.out.println("(Appuyer sur * pour quitter l'ajout de marque)");
 				System.out.println("Ajouter une marque:");
@@ -167,7 +168,7 @@ public class Magasin {
 					marque = sc.next();
 				}
 				System.out.println("Quel est le type de chargeur");
-				type.valueOf(sc.next());
+				type = Types.get(sc.next());
 				Chargeur chargeur = new Chargeur(reference, intitule ,prix, marques, type);
 				return chargeur;
 			case 5: return null;
