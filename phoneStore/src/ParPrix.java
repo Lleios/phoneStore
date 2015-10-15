@@ -11,9 +11,8 @@ import java.util.Comparator;
 public class ParPrix implements Comparator<Article> {
 
 	/**
-	 * Constructeur de la classe ParPrix
+	 * Constructeur par defaut
 	 * 
-	 * Le constructeur n'a pas de paramètre
 	 */
 	public ParPrix(){
 		super();

@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -21,32 +20,37 @@ public class Magasin {
 	public static void main(String[] args) {
 		
 		Article article;
-		Scanner sc = new Scanner(System.in);
+		Scanner sc;
 		while(true){
+			sc = new Scanner(System.in);
 			menu();
-			switch(sc.nextInt()){
-			case 1: article = creeArticle();
-				listeArticles.add(article);
-			break;
-			case 2: if(listeArticles.getListeArticles().isEmpty()){
-				System.out.println("La liste est vide pas d'article à supprimer !");
-			}else{
-				article = supprimerArticle();
-				listeArticles.delete(article);
-			}
-			break;
-			case 3: listeArticles.afficher();
-			break;
-			case 4:listeArticles.tousLesArticles_ParRef();
-			break;
-			case 5:listeArticles.tousLesArticles_ParIntitule();
-			break;
-			case 6:listeArticles.tousLesArticles_ParPrix();;
-			break;
-			case 7: System.exit(0);
-			break;
-			default: System.out.println("Je n'ai pas compris, veuillez choisir un entier"
-					+ " pour faire votre choix.");
+			try{
+				switch(sc.nextInt()){
+				case 1: article = creeArticle();
+					listeArticles.add(article);
+				break;
+				case 2: if(listeArticles.getListeArticles().isEmpty()){
+					System.out.println("La liste est vide pas d'article à supprimer !");
+				}else{
+					article = supprimerArticle();
+					listeArticles.delete(article);
+				}
+				break;
+				case 3: listeArticles.afficher();
+				break;
+				case 4:listeArticles.tousLesArticles_ParRef();
+				break;
+				case 5:listeArticles.tousLesArticles_ParIntitule();
+				break;
+				case 6:listeArticles.tousLesArticles_ParPrix();;
+				break;
+				case 7: System.exit(0);
+				break;
+				default: System.out.println("??? Veuillez choisir chiffre"
+						+ " de la liste pour faire votre choix ???\n");
+				}
+			}catch(InputMismatchException e){
+				System.out.println("!!! Les chaines de caractères ne sont pas autorisées !!!\n");
 			}
 		}
 //		Coque co1 = new Coque(17256, "Coque", (float) 12.90, 
@@ -100,6 +104,7 @@ public class Magasin {
 		while(defaut){
 			defaut = false;
 			switch(sc.nextInt()){
+			//--------------------Ajouter un Telephone-------------------
 			case 1: System.out.println("Indiquez la reference du téléphone:");
 				reference = sc.nextInt();
 				System.out.println("Tapez le nom du telephone:");
@@ -107,11 +112,12 @@ public class Magasin {
 				System.out.println("Quel est le prix du téléphone:");
 				prix = sc.nextFloat();
 				System.out.println("Quel est l'opérateur associer:");
-//				operateur.valueOf(sc.next());
 				operateur = Operateur.get(sc.next());
 				Telephone tel = new Telephone(reference, intitule, prix, operateur);
 				System.out.println("Téléphone ajouté au magasin !");
 				return tel;
+				
+			//----------------------Ajouter une coque------------------
 			case 2: System.out.println("Indiquez la reference de la coque:");
 				reference = sc.nextInt();
 				System.out.println("Tapez l'intitule de la coque:");
@@ -132,6 +138,8 @@ public class Magasin {
 				Coque coque = new Coque(reference, intitule, prix, marques, couleur);
 				System.out.println("Coque ajoutée au magasin !");
 				return coque;
+				
+			//---------------------Ajouter un cordon--------------------
 			case 3: System.out.println("Indiquez la reference du cordon:");
 				reference = sc.nextInt();
 				System.out.println("Tapez l'intitule du cordon:");
@@ -151,6 +159,8 @@ public class Magasin {
 				Cordon cordon = new Cordon(reference, intitule, prix, marques, longueur);
 				System.out.println("Coque ajoutée au magasin !");
 				return cordon;
+				
+			//---------------------Ajouter un chargeur---------------------
 			case 4: System.out.println("Indiquez la reference du chargeur:");
 				reference = sc.nextInt();
 				System.out.println("Tapez l'intitule du chargeur:");
@@ -171,7 +181,11 @@ public class Magasin {
 				type = Types.get(sc.next());
 				Chargeur chargeur = new Chargeur(reference, intitule ,prix, marques, type);
 				return chargeur;
+				
+			//---------------------Retourner au menu principal-------------------------
 			case 5: return null;
+			
+			//--Message d'information si le choix choisi ne correspond pas à ceux proposés
 			default: System.out.println("Je n'ai pas compris, veuillez choisir un entier"
 					+ " pour faire votre choix.");
 				defaut = true;
@@ -187,9 +201,9 @@ public class Magasin {
 		System.out.println("-------------Supprimmer article------------");
 		System.out.println("Quel est l'article que vous voulez supprimer:");
 		System.out.println("(indiquez sa référence)");
+		listeArticles.afficher();
 		Scanner sc = new Scanner(System.in);
 		reference = sc.nextInt();
-		listeArticles.afficher();
 		return listeArticles.trouverArticle(reference);
 	}
 
