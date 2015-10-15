@@ -130,7 +130,7 @@ public class Magasin {
 				System.out.println("(Appuyer sur * pour quitter l'ajout de marque)");
 				System.out.println("Ajouter une marque:");
 				marque = sc.next();
-				while(marque.equals('*') == false){
+				while(marque.equals("*") == false){
 					marques.add(marque);
 					System.out.println("Ajouter une marque:");
 					marque = sc.next();
@@ -151,7 +151,7 @@ public class Magasin {
 				System.out.println("Quel sont les marques associées:");
 				System.out.println("(Appuyer sur * pour quitter l'ajout de marque)");
 				marque = sc.next();
-				while(marque.equals('*') == false){
+				while(marque.equals("*") == false){
 					marques.add(marque);
 					System.out.println("Ajouter une marque:");
 					marque = sc.next();
@@ -167,12 +167,10 @@ public class Magasin {
 				intitule = sc.next();
 				System.out.println("Quel est le prix du chargeur:");
 				prix = sc.nextFloat();
-				System.out.println("Quel est le prix du chargeur:");
-				prix = sc.nextFloat();
 				System.out.println("Quel sont les marques associées:");
 				System.out.println("(Appuyer sur * pour quitter l'ajout de marque)");
 				marque = sc.next();
-				while(marque.equals('*') == false){
+				while(marque.equals("*") == false){
 					marques.add(marque);
 					System.out.println("Ajouter une marque:");
 					marque = sc.next();
