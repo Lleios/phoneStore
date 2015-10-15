@@ -31,7 +31,7 @@ public class Accessoire extends Article {
 	/** 
 	 * Obtenir l'ensemble des marques compatibles avec l'accessoire
 	 * 
-	 * @return ensemble de marques
+	 * @return HashSet<String>
 	 */
 	public Set<String> getMarques() {
 		return this.marques;
@@ -40,14 +40,16 @@ public class Accessoire extends Article {
 	/** 
 	 * Change l'ensemble des marques compatibles avec l'accessoire
 	 * 
-	 * @param ensemble de marques
+	 * @param marques
 	 */
 	public void setMarques(Set<String> marques) {
 		this.marques = marques;
 	}
 
 	/**
-	 * retourne l'objet Accessoire sous la forme d'une chaïne de caractères
+	 * Retourne l'objet Accessoire sous la forme d'une chaïne de caractères
+	 * 
+	 * @return String
 	 */
 	public String toString() {
 		return super.toString() + " Telephone compatibles avec : " + this.marques;

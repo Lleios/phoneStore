@@ -27,7 +27,7 @@ public class Article {
 	/**
 	 * Obtenir l'intitule de l'article
 	 * 
-	 * @return l'intitule de l'article
+	 * @return String
 	 */
 	public String getIntitule() {
 		return this.intitule;
@@ -36,7 +36,7 @@ public class Article {
 	/**
 	 * Changer l'intitule de l'article
 	 * 
-	 * @param intitule nouveau intitule de l'article
+	 * @param intitule
 	 */
 	public void setIntitule(String intitule) {
 		this.intitule = intitule;
@@ -44,7 +44,7 @@ public class Article {
 
 	/** Obtenir la reference de l'article
 	 * 
-	 * @return la reference de l'article
+	 * @return int
 	 */
 	public int getReference() {
 		return this.reference;
@@ -53,7 +53,7 @@ public class Article {
 	/** 
 	 * Changer la reference de l'article
 	 * 
-	 * @param reference nouvelle reference de l'article
+	 * @param reference
 	 */
 	public void setReference(int reference) {
 		this.reference = reference;
@@ -62,7 +62,7 @@ public class Article {
 	/** 
 	 * Obtenir le prix de l'article
 	 * 
-	 * @return le prix de l'article
+	 * @return float
 	 */
 	public float getPrix() {
 		return this.prix;
@@ -71,7 +71,7 @@ public class Article {
 	/** 
 	 * Changer le prix de l'article
 	 * 
-	 * @param prix nouveau prix de l'article
+	 * @param prix
 	 */
 	public void setPrix(float prix) {
 		this.prix = prix;
@@ -79,6 +79,8 @@ public class Article {
 
 	/**
 	 * Retourne l'objet Article sous la forme d'une chaîne de caractères
+	 * 
+	 * @return String
 	 */
 	public String toString() {
 		return "Reference de l'article: " + this.reference + ". Intitulé de l'article: " + this.intitule + 

@@ -1,7 +1,7 @@
 /**
 * Classe ListeArticles
 * 
-* La classe ListeArticles, représente les articles présent dans le magasin
+* La classe ListeArticles représente les articles présent dans le magasin
 *
 * @author  Gonnord Kevin, Chcouropat Youri
 */
@@ -21,11 +21,28 @@ public class ListeArticles{
 	public ListeArticles() {
 		this.listeArticles = new ArrayList<Article>();
 	}
+	/**
+	 * Retourne la liste des articles
+	 * 
+	 * @return List<Article>
+	 */
+	public List<Article> getListeArticles() {
+		return listeArticles;
+	}
+
+	/**
+	 * Change la liste des articles avec celle donnée en paramètre
+	 * 
+	 * @param listeArticles
+	 */
+	public void setListeArticles(List<Article> listeArticles) {
+		this.listeArticles = listeArticles;
+	}
 
 	/** 
 	 * Ajouter des articles dans la liste d'articles
 	 * 
-	 * @param article à ajouter dans la liste
+	 * @param article
 	 */
 	public void add(Article article) {
 		this.listeArticles.add(article);
@@ -34,7 +51,7 @@ public class ListeArticles{
 	/** 
 	 * Supprimer un article de la liste des articles
 	 * 
-	 * @param article à supprimmer de la liste
+	 * @param article
 	 */
 	public void delete(Article article) {
 		this.listeArticles.remove(article);
@@ -48,8 +65,8 @@ public class ListeArticles{
 		this.afficher();
 	}
 
-	/** Affichage des articles par tri selon l'intitule de l'article
-	 * 
+	/** 
+	 * Affichage des articles par tri selon l'intitule de l'article
 	 */
 	public void tousLesArticles_ParIntitule() {
 		Collections.sort(this.listeArticles, new ParIntitule());
@@ -66,6 +83,8 @@ public class ListeArticles{
 	
 	/**
 	 * Ecris la liste d'article dans un document texte
+	 * 
+	 * @param dest
 	 */
 	public void sauvegarde(String dest){
 		try{
@@ -96,6 +115,12 @@ public class ListeArticles{
 		}
 	}
 	
+	/**
+	 * Retourne l'article qui a la référence donnée en paramètre
+	 * 
+	 * @param reference
+	 * @return Article
+	 */
 	public Article trouverArticle(int reference){
 		for(Article a: listeArticles){
 			if(a.getReference() == reference){
@@ -103,14 +128,6 @@ public class ListeArticles{
 			}
 		}
 		return null;
-	}
-
-	public List<Article> getListeArticles() {
-		return listeArticles;
-	}
-
-	public void setListeArticles(List<Article> listeArticles) {
-		this.listeArticles = listeArticles;
 	}
 	
 	

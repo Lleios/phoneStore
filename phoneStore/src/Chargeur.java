@@ -27,6 +27,8 @@ public class Chargeur extends Accessoire {
 
 	/**
 	 * Retourne l'object Chargeur sous la forme d'une chaïne de caractères
+	 * 
+	 * @return String
 	 */
 	public String toString() {
 		return super.toString() +"type : " + this.types + ".";

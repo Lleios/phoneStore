@@ -19,11 +19,12 @@ public class ParIntitule implements Comparator<Article> {
 	}
 	
 	/**
-	 * Compare deux articles entrés en paramètres pour les trier par ordre croissant
+	 * Compare deux articles entrés en paramètres pour les trier par ordre croissant.
+	 * Retourne un entier positif, negatif ou nul selon l'ordre entre les deux articles
 	 * 
 	 * @param a1
 	 * @param a2
-	 * @return un entier positif, negatif ou nul selon l'ordre entre les deux articles
+	 * @return int
 	 */
 	public int compare(Article a1, Article a2){
 		return a1.getIntitule().compareTo(a2.getIntitule());

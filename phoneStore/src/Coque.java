@@ -28,6 +28,8 @@ public class Coque extends Accessoire {
 
 	/**
 	 * Retourne l'objet Coque sous la forme d'une chaïne de caractères
+	 * 
+	 * @return String
 	 */
 	public String toString() {
 		return super.toString() + " Couleur: " + this.couleur +".";

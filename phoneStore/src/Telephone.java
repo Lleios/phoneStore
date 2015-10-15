@@ -9,6 +9,7 @@ public class Telephone extends Article {
 	private Operateur operateur;
 
 	/**
+	 * Constructeur de la classe Telephone
 	 * 
 	 * @param reference
 	 * @param intitule
@@ -19,7 +20,12 @@ public class Telephone extends Article {
 		super(reference, intitule, prix);
 		this.operateur = operateur;
 	}
-
+	
+	/**
+	 * Retourne l'objet Telephone sous la forme d'une chaîne de caractère
+	 * 
+	 * @return String
+	 */
 	public String toString() {
 		return super.toString()+ " Operateur associé: "+this.operateur;
 	}

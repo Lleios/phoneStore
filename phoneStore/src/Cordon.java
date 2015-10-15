@@ -25,7 +25,7 @@ public class Cordon extends Accessoire {
 
 	/** Obtenir la longueur du cordon
 	 * 
-	 * @return longueur
+	 * @return int
 	 */
 	public int getLongueur() {
 		return this.longueur;
@@ -34,12 +34,16 @@ public class Cordon extends Accessoire {
 	/** Changer la logueur du cordon
 	 * 
 	 * @param longueur
-	 * 
 	 */
 	public void setLongueur(int longueur) {
 		this.longueur = longueur;
 	}
 
+	/**
+	 * Retourne l'object Cordon sous la forme d'une chaîne
+	 * 
+	 * @return String
+	 */
 	public String toString() {
 		return super.toString() + " Longueur: " + this.longueur +".";
 	}
