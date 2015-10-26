@@ -10,20 +10,20 @@ import java.util.Set;
 
 public class Chargeur extends Accessoire {
 	
-	private Types types;
+	private Types type;
 
 	/**
 	 * Constructeur de la classe Chargeur
 	 * 
-	 * @param reference
-	 * @param intitule
-	 * @param prix
-	 * @param marques
-	 * @param types
+	 * @param reference reference de l'article
+	 * @param intitule intitule nom de l'article
+	 * @param prix prix de l'article en euros
+	 * @param marques marques compatibles avec l'accessoire
+	 * @param types type de chargeur
 	 */
-	public Chargeur(int reference, String intitule, float prix, Set<String> marques, Types types) {
+	public Chargeur(int reference, String intitule, float prix, Set<String> marques, Types type) {
 		super(reference, intitule, prix, marques);
-		this.types = types;
+		this.type = type;
 	}
 
 	/**
@@ -32,7 +32,7 @@ public class Chargeur extends Accessoire {
 	 * @return String
 	 */
 	public String toString() {
-		return super.toString() +"type : " + this.types + ".";
+		return super.toString() +"type : " + this.type + ".";
 	}
 
 }
