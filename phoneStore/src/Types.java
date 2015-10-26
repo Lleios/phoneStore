@@ -22,7 +22,7 @@ public enum Types {
 	 * sinon retourne null
 	 * 
 	 * @param type
-	 * @return
+	 * @return Types
 	 */
 	public static Types get(String type)
 	{

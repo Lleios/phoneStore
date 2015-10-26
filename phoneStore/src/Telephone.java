@@ -11,10 +11,10 @@ public class Telephone extends Article {
 	/**
 	 * Constructeur de la classe Telephone
 	 * 
-	 * @param reference
-	 * @param intitule
-	 * @param prix
-	 * @param operateur
+	 * @param reference la référence de l'article
+	 * @param intitule le nom de l'article
+	 * @param prix le prix de l'article
+	 * @param operateur le nom de l'opérateur 
 	 */
 	public Telephone(int reference, String intitule, float prix, Operateurs operateur) {
 		super(reference, intitule, prix);
@@ -27,7 +27,7 @@ public class Telephone extends Article {
 	 * @return String
 	 */
 	public String toString() {
-		return super.toString()+ " Operateur associé: "+this.operateur;
+		return super.toString()+ " Operateur associé: "+this.operateur+".";
 	}
 
 }

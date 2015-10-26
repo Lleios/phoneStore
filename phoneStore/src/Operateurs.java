@@ -22,7 +22,7 @@ public enum Operateurs {
 	 * sinon retourne null
 	 * 
 	 * @param type
-	 * @return
+	 * @return Operateurs
 	 */
 	public static Operateurs get(String operateur)
 	{

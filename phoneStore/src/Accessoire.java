@@ -17,9 +17,9 @@ public class Accessoire extends Article {
 	/**
 	 * Constructeur de la classe Accessoire
 	 * 
-	 * @param reference
-	 * @param intitule
-	 * @param prix
+	 * @param reference la référence de l'article
+	 * @param intitule le nom de l'article
+	 * @param prix le prix de l'article
 	 * @param marques
 	 */
 	public Accessoire(int reference, String intitule, float prix, Set<String> marques) {

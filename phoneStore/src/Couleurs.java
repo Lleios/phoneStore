@@ -22,7 +22,7 @@ public enum Couleurs {
 	 * sinon retourne null
 	 * 
 	 * @param couleur
-	 * @return Couleur ou null
+	 * @return Couleurs ou null
 	 */
 	public static Couleurs get(String couleur)
 	{
