@@ -84,7 +84,7 @@ public class ListeArticles{
 	/**
 	 * Ecris la liste d'article dans un document texte
 	 * 
-	 * @param dest
+	 * @param dest le fichier ou sera stocker la liste des articles
 	 */
 	public void sauvegarde(String dest){
 		try{

@@ -23,6 +23,7 @@ public class Chargeur extends Accessoire {
 	 */
 	public Chargeur(int reference, String intitule, float prix, Set<String> marques, Types types) {
 		super(reference, intitule, prix, marques);
+		this.types = types;
 	}
 
 	/**
