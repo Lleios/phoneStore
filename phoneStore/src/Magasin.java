@@ -49,6 +49,13 @@ public class Magasin {
 				break;
 				case 7: System.exit(0);
 				break;
+				case 8 : if(listeArticles.getListeArticles().isEmpty()){
+							System.out.println("La liste est vide pas d'article à sauvegarder !");
+						 }
+						 else {
+							 listeArticles.sauvegarde("listeArticles.txt");
+						 }
+				break;
 				default: System.out.println("??? Veuillez choisir chiffre"
 						+ " de la liste pour faire votre choix ???\n");
 				}
@@ -127,6 +134,7 @@ public class Magasin {
 				while ( operateur == null){
 					System.out.println("Operateur inexistant");
 					System.out.println("veuillez entrer un opérateur appartenant a la liste");
+					operateur = Operateurs.get(sc.next()); 
 				}
 				Telephone tel = new Telephone(reference, intitule, prix, operateur);
 				System.out.println("Téléphone ajouté au magasin !");
@@ -148,6 +156,7 @@ public class Magasin {
 				while ( couleur == null){
 					System.out.println("Couleur non valide");
 					System.out.println("veuillez entrer une couleur appartenant a la liste");
+					couleur = Couleurs.get(sc.next()); 
 				}
 				System.out.println("Quel sont les marques associées:");
 				System.out.println("(Appuyer sur * pour quitter l'ajout de marque)");
@@ -207,6 +216,7 @@ public class Magasin {
 				while ( type == null){
 					System.out.println("Type non valide");
 					System.out.println("veuillez entrer un type appartenant a la liste");
+					type = Types.get(sc.next());
 				}
 				Chargeur chargeur = new Chargeur(reference, intitule ,prix, marques, type);
 				return chargeur;
@@ -228,7 +238,7 @@ public class Magasin {
 	/**
 	 * Méthode de suppresion d'un article qui retourne l'article supprimé
 	 * 
-	 * @return Article
+	 * @return Article l'article supprimé
 	 */
 	public static Article supprimerArticle(){
 		int reference;
