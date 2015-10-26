@@ -10,7 +10,7 @@ import java.util.Set;
 
 public class Coque extends Accessoire {
 
-	private Couleur couleur;
+	private Couleurs couleur;
 
 	/** 
 	 * Constructeur de la classe Accessoire
@@ -21,7 +21,7 @@ public class Coque extends Accessoire {
 	 * @param marques
 	 * @param couleur
 	 */
-	public Coque(int reference, String intitule, float prix, Set<String> marques, Couleur couleur) {
+	public Coque(int reference, String intitule, float prix, Set<String> marques, Couleurs couleur) {
 		super(reference, intitule, prix, marques);
 		this.couleur = couleur;
 	}

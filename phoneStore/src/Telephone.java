@@ -6,7 +6,7 @@
 
 public class Telephone extends Article {
 
-	private Operateur operateur;
+	private Operateurs operateur;
 
 	/**
 	 * Constructeur de la classe Telephone
@@ -16,7 +16,7 @@ public class Telephone extends Article {
 	 * @param prix
 	 * @param operateur
 	 */
-	public Telephone(int reference, String intitule, float prix, Operateur operateur) {
+	public Telephone(int reference, String intitule, float prix, Operateurs operateur) {
 		super(reference, intitule, prix);
 		this.operateur = operateur;
 	}

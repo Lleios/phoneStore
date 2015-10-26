@@ -6,6 +6,8 @@ import java.util.Set;
 /**
 * Classe Magasin
 *
+* Classe de test
+*
 * @author  Gonnord Kevin, Chcouropat Youri
 */
 
@@ -13,7 +15,8 @@ public class Magasin {
 
 	static ListeArticles listeArticles = new ListeArticles();
 	
-	/** Jeu de test pour les classes crée
+	/** 
+	 * main 
 	 * 
 	 * @param args
 	 */
@@ -62,13 +65,16 @@ public class Magasin {
 //		listeArticles.afficher();
 		
 	}
-	
+	/**
+	 * Méthode qui affiche un menu
+	 * 
+	 */
 	public static void menu(){
 		System.out.println("-----------Menu Principal--------------");
 		System.out.println("1 - Ajouter un articles dans le magasin");
 		System.out.println("2 - Supprimer un article du magasin");
 		System.out.println("3 - Afficher la liste d'article du magasin");
-		System.out.println("4 - Affihcher la liste d'article trier par référence");
+		System.out.println("4 - Afficher la liste d'article trier par référence");
 		System.out.println("5 - Afficher la liste d'artcle trier par intitulé");
 		System.out.println("6 - Afficher la liste d'article trier par prix");
 		System.out.println("8 - Sauvegarder les articles dans un fichiers");
@@ -76,10 +82,11 @@ public class Magasin {
 		System.out.println("(appuyer sur le numero correspondant)");
 	}
 	
-	public static void menuCreeArticle(){
-		
-	}
-	
+	/**
+	 * Méthode de création d'article
+	 * 
+	 * @return Article
+	 */
 	public static Article creeArticle(){
 		int reference;
 		String intitule;
@@ -88,8 +95,8 @@ public class Magasin {
 		String marque;
 		Set<String> marques = new HashSet<String>();
 		Types type = null;
-		Operateur operateur = null;
-		Couleur couleur = null;
+		Operateurs operateur = null;
+		Couleurs couleur = null;
 		boolean defaut = true;
 		
 		System.out.println("-------------Ajout d'un article-----------");
@@ -112,7 +119,15 @@ public class Magasin {
 				System.out.println("Quel est le prix du téléphone:");
 				prix = sc.nextFloat();
 				System.out.println("Quel est l'opérateur associer:");
-				operateur = Operateur.get(sc.next());
+				System.out.print("Opérateurs : ");
+				for (Operateurs oper : Operateurs.values()){
+					System.out.print(oper.toString()+" ");
+				}
+				operateur = Operateurs.get(sc.next()); 
+				while ( operateur == null){
+					System.out.println("Operateur inexistant");
+					System.out.println("veuillez entrer un opérateur appartenant a la liste");
+				}
 				Telephone tel = new Telephone(reference, intitule, prix, operateur);
 				System.out.println("Téléphone ajouté au magasin !");
 				return tel;
@@ -125,7 +140,15 @@ public class Magasin {
 				System.out.println("Quel est le prix de la coque:");
 				prix = sc.nextFloat();
 				System.out.println("Quel est la couleur de la coque:");
-				couleur = Couleur.get(sc.next());
+				System.out.print("Couleurs : ");
+				for (Couleurs coul : Couleurs.values()){
+					System.out.print(coul.toString()+" ");
+				}
+				couleur = Couleurs.get(sc.next()); 
+				while ( couleur == null){
+					System.out.println("Couleur non valide");
+					System.out.println("veuillez entrer une couleur appartenant a la liste");
+				}
 				System.out.println("Quel sont les marques associées:");
 				System.out.println("(Appuyer sur * pour quitter l'ajout de marque)");
 				System.out.println("Ajouter une marque:");
@@ -176,7 +199,15 @@ public class Magasin {
 					marque = sc.next();
 				}
 				System.out.println("Quel est le type de chargeur");
-				type = Types.get(sc.next());
+				System.out.print("Chargeur : ");
+				for (Types types : Types.values()){
+					System.out.print(types.toString()+" ");
+				}
+				type = Types.get(sc.next()); 
+				while ( type == null){
+					System.out.println("Type non valide");
+					System.out.println("veuillez entrer un type appartenant a la liste");
+				}
 				Chargeur chargeur = new Chargeur(reference, intitule ,prix, marques, type);
 				return chargeur;
 				
@@ -194,6 +225,11 @@ public class Magasin {
 		
 	}
 	
+	/**
+	 * Méthode de suppresion d'un article qui retourne l'article supprimé
+	 * 
+	 * @return Article
+	 */
 	public static Article supprimerArticle(){
 		int reference;
 		System.out.println("-------------Supprimmer article------------");
