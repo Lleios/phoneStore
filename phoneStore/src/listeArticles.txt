@@ -1,1 +1,6 @@
-Reference de l'article: 545. Intitulé de l'article: iPhone. Prix de l'article: 5.0€ Operateur associé: SFR.
+LISTE DES ARTICLES EN VENTES
+Reference de l'article : 23
+Intitulé de l'article : dsfds
+Prix de l'article : 23.0€
+Operateur associé : SFR
+******************************************************

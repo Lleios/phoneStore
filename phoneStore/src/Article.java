@@ -84,8 +84,8 @@ public class Article {
 	 * @return String l'objet Article sous la forme d'une chaîne de caractères
 	 */
 	public String toString() {
-		return "Reference de l'article: " + this.reference + ". Intitulé de l'article: " + this.intitule + 
-				". Prix de l'article: " + this.prix + "€";
+		return "Reference de l'article : " + this.reference + "\nIntitulé de l'article : " + this.intitule + 
+				"\nPrix de l'article : " + this.prix + "€";
 	}
 	
 }

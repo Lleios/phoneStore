@@ -27,7 +27,7 @@ public class Telephone extends Article {
 	 * @return String l'object Telephone sous la forme d'une chaïne de caractères
 	 */
 	public String toString() {
-		return super.toString()+ " Operateur associé: "+this.operateur+".";
+		return super.toString()+ "\nOperateur associé : "+this.operateur;
 	}
 
 }

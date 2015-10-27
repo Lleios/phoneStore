@@ -45,6 +45,6 @@ public class Cordon extends Accessoire {
 	 * @return String l'object Cordon sous la forme d'une chaîne de caractère
 	 */
 	public String toString() {
-		return super.toString() + " Longueur: " + this.longueur +".";
+		return super.toString() + "\nLongueur : " + this.longueur +"cm.";
 	}
 }

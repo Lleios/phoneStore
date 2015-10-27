@@ -32,7 +32,7 @@ public class Coque extends Accessoire {
 	 * @return String l'object Coque sous la forme d'une chaîne de caractères
 	 */
 	public String toString() {
-		return super.toString() + " Couleur: " + this.couleur +".";
+		return super.toString() + "\nCouleur : " + this.couleur +".";
 	}
 
 }

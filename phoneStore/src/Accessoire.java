@@ -52,7 +52,7 @@ public class Accessoire extends Article {
 	 * @return String
 	 */
 	public String toString() {
-		return super.toString() + " Telephone compatibles avec : " + this.marques;
+		return super.toString() + "\nAccessoire compatible avec la/les marque(s) de téléphone(s) suivante(s) : " + this.marques;
 	}
 	
 	/**

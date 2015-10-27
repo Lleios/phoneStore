@@ -5,6 +5,7 @@
 *
 * @author  Gonnord Kevin, Chcouropat Youri
 */
+import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -62,9 +63,9 @@ public class ListeArticles{
 	 * 
 	 * Utilise la méthode compare(a1,a2) de la classe ParRef
 	 */
-	public void tousLesArticles_ParRef() {
+	public String tousLesArticles_ParRef() {
 		Collections.sort(this.listeArticles, new ParRef());
-		this.afficher();
+		return this.toString();
 	}
 
 	/** 
@@ -72,9 +73,9 @@ public class ListeArticles{
 	 * 
 	 * Utilise la méthode compare(a1,a2) de la classe ParIntitule
 	 */
-	public void tousLesArticles_ParIntitule() {
+	public String tousLesArticles_ParIntitule() {
 		Collections.sort(this.listeArticles, new ParIntitule());
-		this.afficher();
+		return this.toString();
 	}
 
 	/** 
@@ -82,9 +83,9 @@ public class ListeArticles{
 	 * 
 	 * Utilise la méthode compare(a1,a2) de la classe ParPrix
 	 */
-	public void tousLesArticles_ParPrix() {
+	public String tousLesArticles_ParPrix() {
 		Collections.sort(this.listeArticles, new ParPrix());
-		this.afficher();
+		return this.toString();
 	}
 	
 	/**
@@ -95,10 +96,17 @@ public class ListeArticles{
 	public void sauvegarde(String dest){
 		try{
 		FileWriter fw = new FileWriter(dest);
-			for (Article a : this.listeArticles){
-				fw.write(a.toString(), 0, a.toString().length());
-			}
-			fw.close();
+		// Utilisation de bufferedWirter pour appeler la méthode newLine()
+		BufferedWriter bw = new BufferedWriter(fw);
+		// Séparer la chaine en plusieurs sous chaine 
+		// car \n ne permet pas de sauter de ligne à l'écriture dans le fichier
+		String[] parts = this.toString().split("\n");
+		for(int i = 0; i < parts.length; i++){
+			bw.write(parts[i]);
+			// newLine() permet le saut de ligne
+			bw.newLine();
+		}
+		bw.close();
 		}
 		catch (IOException e){
 			e.printStackTrace();
@@ -107,7 +115,6 @@ public class ListeArticles{
 	
 	/**
 	 * Vérifie l'uniticité des références dans la liste
-	 * 
 	 * 
 	 * @param reference référence à tester
 	 * @return boolean vrai si l'uniticité est vérifiée, faux sinon
@@ -125,17 +132,20 @@ public class ListeArticles{
 	/** 
 	 * Afficher les articles de la liste d'articles
 	 */
-	public void afficher(){
+	public String toString(){
+		String resultat = "";
 		//On vérifie si la liste d'article est vide
 		if(listeArticles.isEmpty()){
-			System.out.println("La liste est vide !");
+			resultat="Il n'y a aucun article en vente";
 		}else{
+			resultat = "LISTE DES ARTICLES EN VENTES\n";
 			//On parcours la liste d'articles
 			for(Article a : listeArticles){
 				//On affiche l'article qui utilisera la fonction toString pour l'afficher
-				System.out.println(a);
+				resultat = resultat + a.toString() + "\n******************************************************";
 			}
 		}
+		return resultat;
 	}
 	
 	/**

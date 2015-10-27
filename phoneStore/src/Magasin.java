@@ -1,3 +1,4 @@
+import java.io.FileNotFoundException;
 import java.util.HashSet;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -40,13 +41,13 @@ public class Magasin {
 					listeArticles.delete(article);
 				}
 				break;
-				case 3: listeArticles.afficher();
+				case 3: System.out.println(listeArticles.toString());
 				break;
-				case 4:listeArticles.tousLesArticles_ParRef();
+				case 4: System.out.println(listeArticles.tousLesArticles_ParRef());
 				break;
-				case 5:listeArticles.tousLesArticles_ParIntitule();
+				case 5: System.out.println(listeArticles.tousLesArticles_ParIntitule());
 				break;
-				case 6:listeArticles.tousLesArticles_ParPrix();;
+				case 6: System.out.println(listeArticles.tousLesArticles_ParPrix());
 				break;
 				case 7: System.exit(0);
 				break;
@@ -54,7 +55,7 @@ public class Magasin {
 							System.out.println("La liste est vide pas d'article à sauvegarder !");
 						 }
 						 else {
-							 listeArticles.sauvegarde("listeArticles.txt");
+							listeArticles.sauvegarde("listeArticles.txt");
 						 }
 				break;
 				default: System.out.println("??? Veuillez choisir chiffre"
@@ -95,8 +96,13 @@ public class Magasin {
 		System.out.println("(Appuyer sur * pour quitter l'ajout de marque)");
 		System.out.println("Ajouter une marque:");
 		marque = sc.next();
-		while(marque.equals("*") == false){
-			marques.add(marque);
+		while( !marque.equals("*") || marques.size() == 0){
+			if ( !marque.equals("*")){
+				marques.add(marque);
+			}
+			if (marques.size() == 0){
+				System.out.println("L'accessoire doit être compatible au moins avec une marque de téléphone");
+			}
 			System.out.println("Ajouter une marque:");
 			marque = sc.next();
 		}
@@ -151,6 +157,7 @@ public class Magasin {
 				for (Operateurs oper : Operateurs.values()){
 					System.out.print(oper.toString()+" ");
 				}
+				System.out.println();
 				operateur = Operateurs.get(sc.next()); 
 				while ( operateur == null){
 					System.out.println("Operateur inexistant");
@@ -181,6 +188,7 @@ public class Magasin {
 				for (Couleurs coul : Couleurs.values()){
 					System.out.print(coul.toString()+" ");
 				}
+				System.out.println();
 				couleur = Couleurs.get(sc.next()); 
 				while ( couleur == null){
 					System.out.println("Couleur non valide");
@@ -225,19 +233,20 @@ public class Magasin {
 				intitule = sc.nextLine();
 				System.out.println("Quel est le prix du chargeur:");
 				prix = sc.nextFloat();
-				marques = ajouterMarques();
 				System.out.println("Quel est le type de chargeur");
 				System.out.print("Chargeur : ");
 				// Contrôle sil l'utilisateur entre bien un type valide
 				for (Types types : Types.values()){
 					System.out.print(types.toString()+" ");
 				}
+				System.out.println();
 				type = Types.get(sc.next()); 
 				while ( type == null){
 					System.out.println("Type non valide");
 					System.out.println("veuillez entrer un type appartenant a la liste");
 					type = Types.get(sc.next());
 				}
+				marques = ajouterMarques();
 				Chargeur chargeur = new Chargeur(reference, intitule ,prix, marques, type);
 				return chargeur;
 				
@@ -265,7 +274,7 @@ public class Magasin {
 		System.out.println("-------------Supprimmer article------------");
 		System.out.println("Quel est l'article que vous voulez supprimer:");
 		System.out.println("(indiquez sa référence)");
-		listeArticles.afficher();
+		System.out.println(listeArticles.toString());
 		Scanner sc = new Scanner(System.in);
 		reference = sc.nextInt();
 		return listeArticles.trouverArticle(reference);
