@@ -16,7 +16,7 @@ public class ListeArticles{
 	private List<Article> listeArticles;
 
 	/** 
-	 * Constructeur initialise la liste d'articles
+	 * Constructeur initialise la liste d'articles avec une liste vide
 	 */
 	public ListeArticles() {
 		this.listeArticles = new ArrayList<Article>();
@@ -24,7 +24,7 @@ public class ListeArticles{
 	/**
 	 * Retourne la liste des articles
 	 * 
-	 * @return List<Article>
+	 * @return List<Article> la liste des articles
 	 */
 	public List<Article> getListeArticles() {
 		return listeArticles;
@@ -33,7 +33,7 @@ public class ListeArticles{
 	/**
 	 * Change la liste des articles avec celle donnée en paramètre
 	 * 
-	 * @param listeArticles
+	 * @param listeArticles la nouvelle liste des articles
 	 */
 	public void setListeArticles(List<Article> listeArticles) {
 		this.listeArticles = listeArticles;
@@ -42,7 +42,7 @@ public class ListeArticles{
 	/** 
 	 * Ajouter des articles dans la liste d'articles
 	 * 
-	 * @param article
+	 * @param article l'article à ajouter
 	 */
 	public void add(Article article) {
 		this.listeArticles.add(article);
@@ -51,7 +51,7 @@ public class ListeArticles{
 	/** 
 	 * Supprimer un article de la liste des articles
 	 * 
-	 * @param article
+	 * @param article l'article à retirer
 	 */
 	public void delete(Article article) {
 		this.listeArticles.remove(article);
@@ -59,6 +59,8 @@ public class ListeArticles{
 
 	/**
 	 * Affichage des articles par tri selon la reference de l'article
+	 * 
+	 * Utilise la méthode compare(a1,a2) de la classe ParRef
 	 */
 	public void tousLesArticles_ParRef() {
 		Collections.sort(this.listeArticles, new ParRef());
@@ -67,6 +69,8 @@ public class ListeArticles{
 
 	/** 
 	 * Affichage des articles par tri selon l'intitule de l'article
+	 * 
+	 * Utilise la méthode compare(a1,a2) de la classe ParIntitule
 	 */
 	public void tousLesArticles_ParIntitule() {
 		Collections.sort(this.listeArticles, new ParIntitule());
@@ -75,6 +79,8 @@ public class ListeArticles{
 
 	/** 
 	 * Affichage des articles par tri selon le prix de l'article
+	 * 
+	 * Utilise la méthode compare(a1,a2) de la classe ParPrix
 	 */
 	public void tousLesArticles_ParPrix() {
 		Collections.sort(this.listeArticles, new ParPrix());
@@ -99,6 +105,23 @@ public class ListeArticles{
 		}	
 	}
 	
+	/**
+	 * Vérifie l'uniticité des références dans la liste
+	 * 
+	 * 
+	 * @param reference référence à tester
+	 * @return boolean vrai si l'uniticité est vérifiée, faux sinon
+	 */
+	public boolean uniteRef(int reference){
+		boolean unite = true;
+		for (Article art : listeArticles){
+			if (reference == art.getReference()){
+				unite = false;
+			}
+		}
+		return unite;
+	}
+	
 	/** 
 	 * Afficher les articles de la liste d'articles
 	 */
@@ -118,8 +141,8 @@ public class ListeArticles{
 	/**
 	 * Retourne l'article qui a la référence donnée en paramètre
 	 * 
-	 * @param reference
-	 * @return Article
+	 * @param reference la référence de l'article recherché
+	 * @return Article l'article recherché ou null si non présent
 	 */
 	public Article trouverArticle(int reference){
 		for(Article a: listeArticles){

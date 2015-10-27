@@ -12,11 +12,11 @@ public class Cordon extends Accessoire {
 
 	/** Constructeur
 	 * 
-	 * @param reference
-	 * @param intitule
-	 * @param prix
-	 * @param marques
-	 * @param longueur
+	 * @param reference reference de l'article
+	 * @param intitule intitule nom de l'article
+	 * @param prix prix de l'article en euros
+	 * @param marques marques de téléphones compatibles avec l'accessoire
+	 * @param longueur longueur en cm de du cordon
 	 */
 	public Cordon(int reference, String intitule, float prix, Set<String> marques, int longueur) {
 		super(reference, intitule, prix, marques);
@@ -25,7 +25,7 @@ public class Cordon extends Accessoire {
 
 	/** Obtenir la longueur du cordon
 	 * 
-	 * @return int
+	 * @return int la longueur du cordon
 	 */
 	public int getLongueur() {
 		return this.longueur;
@@ -33,7 +33,7 @@ public class Cordon extends Accessoire {
 
 	/** Changer la logueur du cordon
 	 * 
-	 * @param longueur
+	 * @param longueur la nouvelle longueur du cordon
 	 */
 	public void setLongueur(int longueur) {
 		this.longueur = longueur;
@@ -42,7 +42,7 @@ public class Cordon extends Accessoire {
 	/**
 	 * Retourne l'object Cordon sous la forme d'une chaîne
 	 * 
-	 * @return String
+	 * @return String l'object Cordon sous la forme d'une chaîne de caractère
 	 */
 	public String toString() {
 		return super.toString() + " Longueur: " + this.longueur +".";

@@ -18,7 +18,7 @@ public class Magasin {
 	/** 
 	 * main 
 	 * 
-	 * @param args
+	 * @param args arguments ajoutés à l'éxécution
 	 */
 	public static void main(String[] args) {
 		
@@ -26,6 +26,7 @@ public class Magasin {
 		Scanner sc;
 		while(true){
 			sc = new Scanner(System.in);
+			// Affichage du menu
 			menu();
 			try{
 				switch(sc.nextInt()){
@@ -62,19 +63,10 @@ public class Magasin {
 			}catch(InputMismatchException e){
 				System.out.println("!!! Les chaines de caractères ne sont pas autorisées !!!\n");
 			}
-		}
-//		Coque co1 = new Coque(17256, "Coque", (float) 12.90, 
-//				new HashSet<String>(Arrays.asList(new String[] {"Iphone 4", "Iphone 4S"})),
-//				Couleur.rose);
-//		
-//		listeArticles.add(co1);
-//		
-//		listeArticles.afficher();
-		
+		}	
 	}
 	/**
 	 * Méthode qui affiche un menu
-	 * 
 	 */
 	public static void menu(){
 		System.out.println("-----------Menu Principal--------------");
@@ -90,22 +82,44 @@ public class Magasin {
 	}
 	
 	/**
+	 * Méthodes qui gère l'ajout des marques pour un accessoire
+	 * 
+	 * @return marques l'ensembles des marques compatible avec l'accessoire
+	 */
+	public static Set<String> ajouterMarques(){
+		Set<String> marques = new HashSet<String>();
+		String marque;
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Quel sont les marques associées:");
+		System.out.println("(Appuyer sur * pour quitter l'ajout de marque)");
+		System.out.println("Ajouter une marque:");
+		marque = sc.next();
+		while(marque.equals("*") == false){
+			marques.add(marque);
+			System.out.println("Ajouter une marque:");
+			marque = sc.next();
+		}
+		return marques;
+	}
+	
+	/**
 	 * Méthode de création d'article
 	 * 
-	 * @return Article
+	 * @return Article l'article créé par l'utilisateur
 	 */
 	public static Article creeArticle(){
 		int reference;
 		String intitule;
 		float prix;
 		int longueur;
-		String marque;
 		Set<String> marques = new HashSet<String>();
 		Types type = null;
 		Operateurs operateur = null;
 		Couleurs couleur = null;
 		boolean defaut = true;
 		
+		// Menu pour choisir quel type d'article créer
 		System.out.println("-------------Ajout d'un article-----------");
 		System.out.println("Choisissez l'article que vous voulez ajouter au magasin:");
 		System.out.println("1 - Telephone");
@@ -121,12 +135,19 @@ public class Magasin {
 			//--------------------Ajouter un Telephone-------------------
 			case 1: System.out.println("Indiquez la reference du téléphone:");
 				reference = sc.nextInt();
+				while ( !listeArticles.uniteRef(reference)){
+					System.out.println("Référence déjà utilisée");
+					System.out.println("Veuillez entrer une référence non utilisée");
+					reference = sc.nextInt();
+				}
 				System.out.println("Tapez le nom du telephone:");
-				intitule = sc.next();
+				sc.nextLine();
+				intitule = sc.nextLine();
 				System.out.println("Quel est le prix du téléphone:");
 				prix = sc.nextFloat();
 				System.out.println("Quel est l'opérateur associer:");
 				System.out.print("Opérateurs : ");
+				// Contrôle si l'utilisateur entre bien un opérateur existant
 				for (Operateurs oper : Operateurs.values()){
 					System.out.print(oper.toString()+" ");
 				}
@@ -136,6 +157,7 @@ public class Magasin {
 					System.out.println("veuillez entrer un opérateur appartenant a la liste");
 					operateur = Operateurs.get(sc.next()); 
 				}
+				
 				Telephone tel = new Telephone(reference, intitule, prix, operateur);
 				System.out.println("Téléphone ajouté au magasin !");
 				return tel;
@@ -143,12 +165,19 @@ public class Magasin {
 			//----------------------Ajouter une coque------------------
 			case 2: System.out.println("Indiquez la reference de la coque:");
 				reference = sc.nextInt();
+				while ( !listeArticles.uniteRef(reference)){
+					System.out.println("Référence déjà utilisée");
+					System.out.println("Veuillez entrer une référence non utilisée");
+					reference = sc.nextInt();
+				}
 				System.out.println("Tapez l'intitule de la coque:");
-				intitule = sc.next();
+				sc.nextLine();
+				intitule = sc.nextLine();
 				System.out.println("Quel est le prix de la coque:");
 				prix = sc.nextFloat();
 				System.out.println("Quel est la couleur de la coque:");
 				System.out.print("Couleurs : ");
+				// Contrôle si l'utilisateur entre bien une couleur disponible
 				for (Couleurs coul : Couleurs.values()){
 					System.out.print(coul.toString()+" ");
 				}
@@ -158,15 +187,7 @@ public class Magasin {
 					System.out.println("veuillez entrer une couleur appartenant a la liste");
 					couleur = Couleurs.get(sc.next()); 
 				}
-				System.out.println("Quel sont les marques associées:");
-				System.out.println("(Appuyer sur * pour quitter l'ajout de marque)");
-				System.out.println("Ajouter une marque:");
-				marque = sc.next();
-				while(marque.equals("*") == false){
-					marques.add(marque);
-					System.out.println("Ajouter une marque:");
-					marque = sc.next();
-				}
+				marques = ajouterMarques();
 				Coque coque = new Coque(reference, intitule, prix, marques, couleur);
 				System.out.println("Coque ajoutée au magasin !");
 				return coque;
@@ -174,20 +195,19 @@ public class Magasin {
 			//---------------------Ajouter un cordon--------------------
 			case 3: System.out.println("Indiquez la reference du cordon:");
 				reference = sc.nextInt();
+				while ( !listeArticles.uniteRef(reference)){
+					System.out.println("Référence déjà utilisée");
+					System.out.println("Veuillez entrer une référence non utilisée");
+					reference = sc.nextInt();
+				}
 				System.out.println("Tapez l'intitule du cordon:");
-				intitule = sc.next();
+				sc.nextLine();
+				intitule = sc.nextLine();
 				System.out.println("Quel est le prix du cordon:");
 				prix = sc.nextFloat();
 				System.out.println("Quel est la longeur du cordon:");
 				longueur = sc.nextInt();
-				System.out.println("Quel sont les marques associées:");
-				System.out.println("(Appuyer sur * pour quitter l'ajout de marque)");
-				marque = sc.next();
-				while(marque.equals("*") == false){
-					marques.add(marque);
-					System.out.println("Ajouter une marque:");
-					marque = sc.next();
-				}
+				marques = ajouterMarques();
 				Cordon cordon = new Cordon(reference, intitule, prix, marques, longueur);
 				System.out.println("Coque ajoutée au magasin !");
 				return cordon;
@@ -195,20 +215,20 @@ public class Magasin {
 			//---------------------Ajouter un chargeur---------------------
 			case 4: System.out.println("Indiquez la reference du chargeur:");
 				reference = sc.nextInt();
+				while ( !listeArticles.uniteRef(reference)){
+					System.out.println("Référence déjà utilisée");
+					System.out.println("Veuillez entrer une référence non utilisée");
+					reference = sc.nextInt();
+				}
 				System.out.println("Tapez l'intitule du chargeur:");
-				intitule = sc.next();
+				sc.nextLine();
+				intitule = sc.nextLine();
 				System.out.println("Quel est le prix du chargeur:");
 				prix = sc.nextFloat();
-				System.out.println("Quel sont les marques associées:");
-				System.out.println("(Appuyer sur * pour quitter l'ajout de marque)");
-				marque = sc.next();
-				while(marque.equals("*") == false){
-					marques.add(marque);
-					System.out.println("Ajouter une marque:");
-					marque = sc.next();
-				}
+				marques = ajouterMarques();
 				System.out.println("Quel est le type de chargeur");
 				System.out.print("Chargeur : ");
+				// Contrôle sil l'utilisateur entre bien un type valide
 				for (Types types : Types.values()){
 					System.out.print(types.toString()+" ");
 				}

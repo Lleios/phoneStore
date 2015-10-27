@@ -10,7 +10,7 @@ public enum Couleurs {
 	/**
 	 * Méthode qui retourne une valeur de l'énumération sous forme de chaine de caractères
 	 * 
-	 * @return String
+	 * @return String valeur de l'énumération sous la forme d'une chaïne de caractère
 	 */
 	public String toString()
 	{
@@ -21,8 +21,8 @@ public enum Couleurs {
 	 * Méthode qui retourne une couleur si celle donnée en paramètre est contenu dans l'énumération
 	 * sinon retourne null
 	 * 
-	 * @param couleur
-	 * @return Couleurs ou null
+	 * @param couleur couleur recherchée
+	 * @return Couleurs si la couleur donnée en paramètre est présente, retourne null sinon
 	 */
 	public static Couleurs get(String couleur)
 	{
